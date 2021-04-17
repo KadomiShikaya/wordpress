@@ -5,6 +5,7 @@ services:
   https-portal:
     image: steveltn/https-portal:1
     ports:
+      - '80:80'
       - '443:443'
     links:
       - wordpress
@@ -15,8 +16,6 @@ services:
 
   wordpress:
     image: wordpress
-    ports:
-      - '80:80'
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
