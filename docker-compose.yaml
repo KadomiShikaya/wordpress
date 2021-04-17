@@ -9,13 +9,9 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: >-
-        ufq9r43-3409fjd3.tk -> http://ufq9r43-3409fjd3.tk
-      #STAGE: 'staging'
+     DOMAINS: 'ufq9r43-3409fjd3.tk -> http://wordpress'
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /etc/docker-compose.d/certs:/etc/nginx/certs
-      - ./server.conf:/etc/nginx/conf.d/server.conf
+      - https-portal-data:/var/lib/https-portal
 
   wordpress:
     image: wordpress
@@ -44,4 +40,5 @@ services:
 volumes:
   wordpress:
   db:
+  https-portal-data:
   
