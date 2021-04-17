@@ -10,7 +10,7 @@ services:
       - wordpress
     environment:
       DOMAINS: >-
-        ufq9r43-3409fjd3.tk/ -> http://wordpress
+        ufq9r43-3409fjd3.tk -> http://wordpress
       #STAGE: 'staging'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
