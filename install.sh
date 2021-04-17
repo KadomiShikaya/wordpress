@@ -12,7 +12,7 @@ sudo service docker start
 
 systemctl enable docker.service
 
-sudo usermod -a -G docker ec2-user
+sudo usermod -a -G docker ubuntu
 
 curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
