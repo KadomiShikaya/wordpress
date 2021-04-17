@@ -34,8 +34,9 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: 'http://54.199.242.80/'
-      # STAGE: 'staging'
+      DOMAINS: >-
+        54.199.242.80 -> http://54.199.242.80
+      #STAGE: 'staging'
       
 volumes:
   wordpress:
