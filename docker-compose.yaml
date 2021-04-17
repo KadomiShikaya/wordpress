@@ -10,7 +10,7 @@ services:
       - wordpress
     environment:
       DOMAINS: >-
-        54.199.242.80 -> http://54.199.242.80
+        54.199.242.80 => http://54.199.242.80
       #STAGE: 'staging'  
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
