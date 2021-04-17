@@ -6,6 +6,8 @@ services:
     image: steveltn/https-portal:1
     ports:
       - '443:443'
+    depends_on:
+      - 
     links:
       - wordpress
     environment:
