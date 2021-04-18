@@ -10,11 +10,9 @@ services:
     links:
       - wordpress
     environment:
-      VIRTUAL_HOST：ufq9r43-3409fjd5.tk
-      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress'
+      DOMAINS: 'ufq9r43-3409fjd5.tk => http://wordpress'
     volumes:
       - https-portal-data:/var/lib/https-portal
-
 
   wordpress:
     image: wordpress
