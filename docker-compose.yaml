@@ -37,7 +37,7 @@ services:
     volumes:
       - db:/var/lib/mysql
       
-   goaccess:
+  goaccess:
     image: allinurl/goaccess
     ports:
       - 7890:7890
