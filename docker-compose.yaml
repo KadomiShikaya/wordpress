@@ -4,6 +4,7 @@ services:
 
   https-portal:
     image: steveltn/https-portal:1.19.0
+    restart: always
     ports:
       - '80:80'
       - '443:443'
