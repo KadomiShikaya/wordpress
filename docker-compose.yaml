@@ -10,7 +10,7 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: '13.113.194.241 -> http://wordpress'
+      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress'
     volumes:
       - https-portal-data:/var/lib/https-portal
 
