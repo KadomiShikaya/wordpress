@@ -65,3 +65,5 @@ volumes:
   db:
   https-portal-data:
   report:
+  data:
+  logs:
