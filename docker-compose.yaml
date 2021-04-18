@@ -11,7 +11,7 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress'
+      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress, ufq9r43-3409fjd5.tk:7981 -> http://nginx'
     volumes:
       - https-portal-data:/var/lib/https-portal
 
@@ -25,6 +25,25 @@ services:
       WORDPRESS_DB_NAME: exampledb
     volumes:
       - wordpress:/var/www/html
+      
+  nginx:
+    image: nginx:1.15-alpine
+    restart: always
+    volumes:
+      - ./goaccess/html:/usr/share/nginx/html
+    ports:
+      - 7891:80
+      
+  goaccess:
+    image: allinurl/goaccess
+    ports:
+      - 7890:7890
+    restart: always
+    volumes:
+      - ./goaccess/config:/srv/config
+      - ./goaccess/html:/srv/report
+      - ./goaccess/logs:/srv/logs
+    command: ["--no-global-config", "--config-file=/srv/config/goaccess.conf", "--log-file=/srv/logs/access.log", -e TZ="Asia/Tokyo", -e "LANG=ja_JP.utf8"]
 
   db:
     image: mysql:5.7
