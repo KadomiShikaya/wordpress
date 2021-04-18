@@ -30,7 +30,9 @@ services:
     image: nginx:1.15-alpine
     restart: always
     volumes:
-      - ./goaccess/html:/usr/share/nginx/html
+      - report:/srv/report
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./.htpasswd:/etc/nginx/conf.d/htpasswd:ro
     ports:
       - 7891:80
       
@@ -40,9 +42,11 @@ services:
       - 7890:7890
     restart: always
     volumes:
-      - ./goaccess/config:/srv/config
-      - ./goaccess/html:/srv/report
-      - ./goaccess/logs:/srv/logs
+      - data:/srv/data
+      - logs:/srv/logs
+      - report:/srv/report
+      - /var/log/nginx/access.log:/srv/logs/access.log:ro
+      - ./goaccess.conf:/srv/data/goaccess.conf:ro
     command: ["--no-global-config", "--config-file=/srv/config/goaccess.conf", "--log-file=/srv/logs/access.log", -e TZ="Asia/Tokyo", -e "LANG=ja_JP.utf8"]
 
   db:
