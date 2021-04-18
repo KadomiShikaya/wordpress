@@ -64,5 +64,4 @@ volumes:
   wordpress:
   db:
   https-portal-data:
-  nginx:
-  goaccess:
+  report:
