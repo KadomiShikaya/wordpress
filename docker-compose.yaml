@@ -11,7 +11,7 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress, ufq9r43-3409fjd5.tk:7981 -> http://nginx'
+      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress, ufq9r43-3409fjd5.tk -> http://nginx'
     volumes:
       - https-portal-data:/var/lib/https-portal
 
