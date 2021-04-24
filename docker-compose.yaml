@@ -11,7 +11,7 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress'
+      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://13.230.146.160,　ufq9r43-3409fjd5.tk -> http://wordpress'
       STAGE: 'production'
       FORCE_RENEW: 'true'
     volumes:
