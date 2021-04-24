@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   https-portal:
-    image: steveltn/https-portal:latest
+    image: steveltn/https-portal:1
     restart: always
     ports:
       - '80:80'
