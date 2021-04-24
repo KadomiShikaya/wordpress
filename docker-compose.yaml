@@ -4,6 +4,8 @@ services:
   wordpress:
     image: wordpress
     restart: always
+    ports:
+    - "8080:80"     
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
@@ -63,8 +65,3 @@ volumes:
   html:
   vhost:
   dhparam:
-  
-networks:
-  default:
-    external:
-      name: common_link
