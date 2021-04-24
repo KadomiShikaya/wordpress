@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   https-portal:
-    image: steveltn/https-portal:1.19.0
+    image: steveltn/https-portal:latest
     restart: always
     ports:
       - '80:80'
@@ -15,8 +15,8 @@ services:
     volumes:
       - https-portal-data:/var/lib/https-portal
     environment:
-      STAGE: 'staging'
-      #FORCE_RENEW: 'true'
+      STAGE: 'production'
+      FORCE_RENEW: 'true'
   wordpress:
     image: wordpress
     restart: always
