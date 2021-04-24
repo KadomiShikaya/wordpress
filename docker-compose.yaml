@@ -14,8 +14,8 @@ services:
       DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress'
     volumes:
       - https-portal-data:/var/lib/https-portal
-    #environment:
-      #STAGE: 'production'
+    environment:
+      STAGE: 'staging'
       #FORCE_RENEW: 'true'
   wordpress:
     image: wordpress
@@ -26,8 +26,7 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress:/var/www/html
-  
+      - wordpress:/var/www/htm
   db:
     image: mysql:5.7
     restart: always
