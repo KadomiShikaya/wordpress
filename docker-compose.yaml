@@ -15,8 +15,8 @@ services:
     volumes:
       - https-portal-data:/var/lib/https-portal
     environment:
-      #STAGE: 'production'
-      #FORCE_RENEW: 'true'
+      STAGE: 'production'
+      FORCE_RENEW: 'true'
   wordpress:
     image: wordpress
     restart: always
