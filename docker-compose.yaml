@@ -59,4 +59,7 @@ services:
 volumes:
   wordpress:
   db:
-  https-portal-data:
+  certs:
+  html:
+  vhost:
+  dhparam:
