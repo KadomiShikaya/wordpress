@@ -1,6 +1,20 @@
 version: '3.1'
 
 services:
+
+  https-portal:
+    image: steveltn/https-portal:1.19.0
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - wordpress
+    environment:
+      DOMAINS: 'ufq9r43-3409fjd5.tk -> http://wordpress'
+    volumes:
+      - https-portal-data:/var/lib/https-portal
+
   wordpress:
     image: wordpress
     restart: always
@@ -10,8 +24,8 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress:/var/www/htm
-      
+      - wordpress:/var/www/html
+  
   db:
     image: mysql:5.7
     restart: always
@@ -22,11 +36,8 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
-      
+
 volumes:
   wordpress:
   db:
-  certs:
-  html:
-  vhost:
-  dhparam:
+  https-portal-data:
