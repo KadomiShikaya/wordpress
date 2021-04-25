@@ -1,25 +1,12 @@
 version: '3.1'
 
 services:
-
-  https-portal:
-    image: steveltn/https-portal:1.19.0
+  wordpress:
+    image: wordpress
     restart: always
     ports:
       - '80:80'
       - '443:443'
-    links:
-      - wordpress
-    environment:
-      DOMAINS: 'ufq9r43-3409fjd7.tk -> http://wordpress'
-      STAGE: 'production'
-    volumes:
-      - https-portal-data:/var/lib/https-portal
-      - /var/run/docker.sock:/var/run/docker.sock:ro # DANGEROUS, see the warning above
-
-  wordpress:
-    image: wordpress
-    restart: always
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
