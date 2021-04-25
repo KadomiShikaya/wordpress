@@ -11,8 +11,8 @@ services:
     links:
       - wordpress
     environment:
-      DOMAINS: 'ufq9r43-3409fjd6.tk -> http://wordpress'
-      # STAGE: 'production'
+      DOMAINS: 'ufq9r43-3409fjd7.tk -> http://wordpress'
+      STAGE: 'production'
     volumes:
       - https-portal-data:/var/lib/https-portal
 
