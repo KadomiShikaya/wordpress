@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 #作業ディレクトリの作成
 mkdir mywp
