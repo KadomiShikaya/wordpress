@@ -10,6 +10,7 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
       VIRTUAL_HOST: ufq9r43-3409fjd6.tk
+      VIRTUAL_PORT: 8000
       LETSENCRYPT_HOST:  ufq9r43-3409fjd6.tk
       LETSENCRYPT_EMAIL: yutayuta.k@gmail.com
     volumes:
