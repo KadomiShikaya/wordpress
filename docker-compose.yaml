@@ -15,6 +15,7 @@ services:
       STAGE: 'production'
     volumes:
       - https-portal-data:/var/lib/https-portal
+      - /var/run/docker.sock:/var/run/docker.sock:ro # DANGEROUS, see the warning above
 
   wordpress:
     image: wordpress
