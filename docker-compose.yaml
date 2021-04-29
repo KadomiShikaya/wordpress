@@ -26,6 +26,19 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
+      
+  wpcli:
+    container_name: wpcli
+    image: wordpress:cli-php7.4
+    working_dir: /var/www/html
+    depends_on:
+      - wordpress
+      - db
+    volumes:
+      - wordpress:/var/www/html
+      - ./conf.d/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    command: "--info"
+    user: xfs
 
 volumes:
   wordpress:
