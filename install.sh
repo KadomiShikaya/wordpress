@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-#作業ディレクトリの作成
+#作業ディレクトリと設定ファイルの作成
 mkdir mywp
 cd mywp
+mkdir conf.d
+cat <<EOF > uploads.ini
+upload_max_filesize = 50M;
+post_max_size = 55M;
+EOF
 
 #パッケージの更新
 sudo apt-get update
