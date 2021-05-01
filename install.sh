@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 #作業ディレクトリと設定ファイルの作成
-mkdir mywp
-cd mywp
-mkdir conf.d
+cd /usr/local/etc/
+mkdir -p php/conf.
+mkdir php/conf.d
 cat <<EOF > uploads.ini
 upload_max_filesize = 50M;
 post_max_size = 55M;
 EOF
+cd /root
+mkdir mywp
+cd mywp
 
 #パッケージの更新
 sudo apt-get update
