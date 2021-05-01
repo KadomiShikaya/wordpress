@@ -44,3 +44,4 @@ volumes:
   wordpress:
   db:
   https-portal-data:
+  ./conf.d/uploads.ini:
