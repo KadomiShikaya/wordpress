@@ -3,7 +3,7 @@
 #作業ディレクトリと設定ファイルの作成
 cd /usr/local/etc/
 mkdir -p php/conf.d && cd $_
-cat <<EOF > uploads.ini
+cat <<EOF > php.ini
 upload_max_filesize = 50M;
 post_max_size = 55M;
 EOF
