@@ -34,6 +34,11 @@ services:
     depends_on:
       - wordpress
       - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb      
     volumes:
       - wordpress:/var/www/html
       - /usr/local/etc/php/conf.d/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
